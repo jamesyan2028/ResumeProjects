@@ -1,1 +1,38 @@
+Overview: This project creates a game of Tetris that the user can play. The project consists of an
+App class, which is the highest level class which creates the Scene and Stage that allows the App
+to be displayed. The App class instantiates PaneOrganizer, which creates the root node, and sets up all
+the necessary panes. PaneOrganizer also instantiates the Game class, which is the highest level logic
+class which populates all of the panes and runs the game. The Game class creates instances of the
+Board and TetrisPiece class. These two classes are responsible for wrapping a 2d array of TetrisSquares
+simulating the board, and a 1d array of TetrisSquares which represent a given tetris piece respectively.
+The TetrisSquare class is a wrapper class for Javafx Rectangle, and are the graphical building blocks of
+the app. The Game class calls methods in both the TetrisPiece and the Board class to determine
+information about the state of the Board and location of the current TetrisPiece. The game
+then combines this information with user input to dictate how the game should function.
 
+Design Choices: A 2D array of TetrisSquares was chosen to represent the board in Tetris because the
+board is composed of rows and columns, and 2D arrays are naturally good at storing information
+in this form. On the other hand, each individual TetrisPiece was stored as an array of four
+TetrisSquares, with an accompanying 2d array of integers which described the position of the
+piece on the board. This design choice allowed for the program to easily distinguish between
+graphical and logical components, as the array of TetrisSquare represent the graphical component
+and the array of coordinates represent their logical position in the board. All of the elements
+stored in arrays were access using for loops, which allowed for much greater control over which
+parts of the array were accessed to implement methods such as line clearing.
+
+Known Bugs: None
+
+Extra Credit: A restart button was added to the button Pane, which graphically and logically
+restarts the game when clicked. A second HBox was also created in the bottom of the BorderPane root
+node which displays the score. The score of a game was calculated as a function of the number of lines
+cleared in a game, as well as the number of lines cleared at one time. In addition, all colors of
+the pieces were chosen in consideration of users with red-green colorblindness, which is the
+most common type of color blindness. All colors were chosen so that individuals with red green
+colorblindness can still differentiate between shape colors.
+
+SRC: As mentioned in the extra credit section, all colors were chosen to allow users
+with colorblindness to still be able to differentiate between piece colors. In addition to this,
+all colors chosen have a Web Content Accessibility Guideline contrast ratio of at least 4.5:1
+with the black background.
+
+Hours: 20

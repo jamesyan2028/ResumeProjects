@@ -1,1 +1,46 @@
+Overview: This project creates a game of Othello that the user can play. The user has the flexibility to
+choose whether the two opposing players are humans or computers, and if the user chooses to make either of
+the players a computer, the user has a choice of three computer difficulties with an increasing depth of
+analysis. The project consists of an App classes, which is the highest level class that creates the
+scene and stage that allows the application to be shown. The App class instantiates the PaneOrganizer
+class, which sets up the root node passed to the scene and the relevant Pane and VBox that forms
+the project's UI. The PaneOrganizer class also instantiates the Controls class, which sets up the VBox
+containing all of the ways the user can interact with the game, as well as the SetupGame class, which
+creates a new instance of the Board class.
 
+The Board instantiates a 2D array of OthelloSquares which form
+the board that Othello is played on. The OthelloSquare class is the primary graphical component of the
+project, and collectively, all of the OthelloSquares in the Board update themselves visually to
+reflect the changing state of the game to the user. Each of the OthelloSquare objects also contains
+an OthelloPiece instance variable, which is a wrapper class for Javafx circle and is responsible
+for graphically adding and flipping pieces on the board.
+
+The SetupGame class also instantiates the Referee class when a particular button in the Controls VBox is
+pressed. The Referee class is responsible for the turn taking functionality, and makes choices about
+how the game should proceed given information about the Board. The Referee class also instantiates
+two Players. The two types of players, a human player and computer player, are represented by the
+two classes HumanPlayer and ComputerPlayer respectively. Both of these classes inherit from the abstract
+superclass Player, which factors out functionality shared by both HumanPlayer and ComputerPlayer,
+such as the ability to place pieces. The referee determines which class to instantiate given the
+selections the user makes in the controls VBox. The methods in the HumanPlayer and ComputerPlayer
+classes primarily serve to determine how a human player and computer player decide which move
+to make. For ComputerPlayers, this involves searching through all possible moves in the current
+board state and evaluating the strategic advantage each potential move will leave the player with.
+To keep track of all of these possible moves, the Move class was created to represent the hypothetical
+moves the computer is considering.
+
+Design Choices: Inheritance was determined to be the better way to factor out commonalities between
+instances of HumanPlayer and ComputerPlayer because both players place pieces on the board in the
+exact same way. Because the implementation of this one method is the same for both classes, this method
+was factored out into the superclass, necessitating the need of a parent class over an interface because
+not all of the methods in the parent class are abstract. An arraylist was also chosen to store all the
+possible moves a computer could make in a given board state in the minimax algorithm. The arraylist
+data structure was chosen because of the need for accessibility and indexing to check through all
+entries in the data structure, and an arraylist was chosen over an array because of the variable number
+of possible moves for different board states. To access the elements in the arraylist, a for each loop
+was used to guarantee that all elements would be accessed, due to the variable number of elements
+that could be in the array.
+
+Known Bugs: None
+
+Approximate Hours: 40
