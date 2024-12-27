@@ -19,20 +19,3 @@ graphical and logical components, as the array of TetrisSquare represent the gra
 and the array of coordinates represent their logical position in the board. All of the elements
 stored in arrays were access using for loops, which allowed for much greater control over which
 parts of the array were accessed to implement methods such as line clearing.
-
-Known Bugs: None
-
-Extra Credit: A restart button was added to the button Pane, which graphically and logically
-restarts the game when clicked. A second HBox was also created in the bottom of the BorderPane root
-node which displays the score. The score of a game was calculated as a function of the number of lines
-cleared in a game, as well as the number of lines cleared at one time. In addition, all colors of
-the pieces were chosen in consideration of users with red-green colorblindness, which is the
-most common type of color blindness. All colors were chosen so that individuals with red green
-colorblindness can still differentiate between shape colors.
-
-SRC: As mentioned in the extra credit section, all colors were chosen to allow users
-with colorblindness to still be able to differentiate between piece colors. In addition to this,
-all colors chosen have a Web Content Accessibility Guideline contrast ratio of at least 4.5:1
-with the black background.
-
-Hours: 20

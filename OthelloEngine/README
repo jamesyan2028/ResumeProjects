@@ -40,7 +40,3 @@ entries in the data structure, and an arraylist was chosen over an array because
 of possible moves for different board states. To access the elements in the arraylist, a for each loop
 was used to guarantee that all elements would be accessed, due to the variable number of elements
 that could be in the array.
-
-Known Bugs: None
-
-Approximate Hours: 40
