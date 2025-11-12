@@ -1,2 +1,1 @@
-Hello, welcome to my project library. I've compiled many of the projects I've previously built in separate subfolders in this repository. Currently, the Othello Engine
-requires Java8 to run, and the Image Denoiser project requires Matlab.
+Hello, welcome to my project library. I've compiled many of the projects I've previously built in separate subfolders in this repository. If you’re curious about any of the projects in this repository, want to discuss my work, or have suggestions for collaboration, feel free to reach out to me at james.yan2028@gmail.com. I’d be happy to answer questions, provide additional details, or walk through any of the projects.
