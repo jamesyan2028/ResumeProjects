@@ -1,0 +1,4 @@
+RNN Accuracy: 0.339
+RNN Perplexity: 16.796
+Transformer Accuracy: 0.346
+Transformer Perplexity: 16.039
